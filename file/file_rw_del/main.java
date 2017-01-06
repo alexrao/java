@@ -6,21 +6,23 @@ public class main
     {
         try
         {
-            if(false)
+            File file = new File("test.txt");
+            if(true)
             {
-                FileWriter pbuf = new FileWriter("test.txt");
+                FileWriter pbuf = new FileWriter(file);
 
                 BufferedWriter fp = new BufferedWriter(pbuf);
 
-                fp.write("Test\n");
+                fp.write("Test0\n testlinn2\n");
 
                 fp.close();
                 System.out.println("文件创建成功!");
             }
-            else
+
+            if(true)
             {
 
-                FileReader pr = new FileReader("test.txt");
+                FileReader pr = new FileReader(file);
                 BufferedReader bufr = new BufferedReader(pr);
                 String buf;
 
@@ -32,6 +34,18 @@ public class main
 
                 bufr.close();
 
+            }
+
+            if(true)
+            {
+                if(file.delete())
+                {
+                    System.out.println(file.getName() + "文件删除成功");
+                }
+                else
+                {
+                    System.out.println(file.getName() + "文件删除失败");
+                }
             }
         }
         catch(IOException e)
